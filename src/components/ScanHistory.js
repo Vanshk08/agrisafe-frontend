@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { calculateSafetyScore, getSafetyStatus } from '../utils/safetyCalculator';
 import './ScanHistory.css';
 
 /**

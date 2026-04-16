@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './ContaminationRiskDisplay.css';
 
@@ -16,18 +16,9 @@ const ContaminationRiskDisplay = ({ batchId }) => {
   const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   /**
-   * Fetch risk data when batch ID changes
-   */
-  useEffect(() => {
-    if (batchId) {
-      fetchRisksAndScore();
-    }
-  }, [batchId, API_BASE_URL]);
-
-  /**
    * Fetch contamination risks and safety score
    */
-  const fetchRisksAndScore = async () => {
+  const fetchRisksAndScore = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -53,7 +44,16 @@ const ContaminationRiskDisplay = ({ batchId }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [API_BASE_URL, batchId]);
+
+  /**
+   * Fetch risk data when batch ID changes
+   */
+  useEffect(() => {
+    if (batchId) {
+      fetchRisksAndScore();
+    }
+  }, [batchId, fetchRisksAndScore]);
 
   /**
    * Get color for risk level

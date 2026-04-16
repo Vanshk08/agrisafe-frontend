@@ -18,15 +18,10 @@ const PreventionAdvisory = ({ batchId }) => {
    * Fetch recommendations when batch ID changes
    */
   useEffect(() => {
-    if (batchId) {
-      fetchRecommendations();
-    }
-  }, [batchId, API_BASE_URL]);
-
-  /**
-   * Fetch safety score with recommendations
-   */
-  const fetchRecommendations = async () => {
+    /**
+     * Fetch safety score with recommendations
+     */
+    const fetchRecommendations = async () => {
     setLoading(true);
     setError(null);
 
@@ -45,7 +40,12 @@ const PreventionAdvisory = ({ batchId }) => {
     } finally {
       setLoading(false);
     }
-  };
+    };
+
+    if (batchId) {
+      fetchRecommendations();
+    }
+  }, [batchId, API_BASE_URL]);
 
   /**
    * Get priority color
