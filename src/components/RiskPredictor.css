@@ -1,0 +1,260 @@
+/* RiskPredictor Component Styles */
+
+.risk-predictor-container {
+  padding: 20px;
+}
+
+.predictor-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.predictor-card h2 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.risk-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-value {
+  background: #f0f0f0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+}
+
+.form-select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #ff9800;
+  box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+}
+
+.form-range {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.form-range::-webkit-slider-thumb:hover {
+  background: #e68900;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff9800;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.form-range::-moz-range-thumb:hover {
+  background: #e68900;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.risk-result {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #999;
+}
+
+.risk-result.low {
+  background: #e8f5e9;
+  border-left-color: #4CAF50;
+}
+
+.risk-result.medium {
+  background: #fff3e0;
+  border-left-color: #ff9800;
+}
+
+.risk-result.high {
+  background: #ffebee;
+  border-left-color: #f44336;
+}
+
+.risk-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.risk-emoji {
+  font-size: 28px;
+}
+
+.risk-label {
+  font-weight: bold;
+  font-size: 18px;
+  flex: 1;
+  color: #333;
+}
+
+.safe-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.risk-result.low .safe-badge {
+  background: #4CAF50;
+  color: white;
+}
+
+.risk-result.high .safe-badge {
+  background: #f44336;
+  color: white;
+}
+
+.risk-percentage {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.percentage-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.percentage-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.percentage-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.risk-details {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.detail-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #333;
+  font-weight: bold;
+}
+
+.risk-message {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.risk-info {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.risk-info p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .predictor-card {
+    padding: 20px;
+  }
+
+  .risk-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .risk-label {
+    flex: none;
+  }
+}

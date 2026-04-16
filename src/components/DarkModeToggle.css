@@ -1,0 +1,228 @@
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Theme */
+:root.dark-mode {
+  /* Color Palette */
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f2e;
+  --bg-tertiary: #242d3d;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --border-color: #3a4451;
+  --card-bg: #1a1f2e;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+:root.dark-mode * {
+  color-scheme: dark;
+}
+
+/* Dark Mode - Background Colors */
+:root.dark-mode body,
+:root.dark-mode .app-container {
+  background-color: #0f1419;
+  color: #e4e6eb;
+}
+
+:root.dark-mode .app-header {
+  background: linear-gradient(135deg, #1a1f2e 0%, #242d3d 100%);
+  border-bottom-color: #3a4451;
+}
+
+:root.dark-mode .uploader-card,
+:root.dark-mode .prediction-result,
+:root.dark-mode .result-details,
+:root.dark-mode .result-card,
+:root.dark-mode .result-item,
+:root.dark-mode .scan-history,
+:root.dark-mode .reasons-section,
+:root.dark-mode .recommendation-section,
+:root.dark-mode .storage-tips-section {
+  background-color: #1a1f2e;
+  border-color: #3a4451;
+  color: #e4e6eb;
+}
+
+:root.dark-mode .result-card.result-fresh {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.1) 100%);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+:root.dark-mode .result-card.result-spoiled {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Dark Mode - Input Elements */
+:root.dark-mode input,
+:root.dark-mode select,
+:root.dark-mode textarea {
+  background-color: #242d3d;
+  color: #e4e6eb;
+  border-color: #3a4451;
+}
+
+:root.dark-mode input:focus,
+:root.dark-mode select:focus,
+:root.dark-mode textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Dark Mode - Buttons */
+:root.dark-mode .btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+:root.dark-mode .btn-primary:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+:root.dark-mode .btn-secondary {
+  background: #3a4451;
+  color: #e4e6eb;
+  border-color: #3a4451;
+}
+
+:root.dark-mode .btn-secondary:hover {
+  background: #4a5561;
+  border-color: #5a6571;
+}
+
+/* Dark Mode - Text Colors */
+:root.dark-mode h1,
+:root.dark-mode h2,
+:root.dark-mode h3,
+:root.dark-mode h4 {
+  color: #e4e6eb;
+}
+
+:root.dark-mode p,
+:root.dark-mode span,
+:root.dark-mode a {
+  color: #e4e6eb;
+}
+
+:root.dark-mode .subtitle {
+  color: #b0b3b8;
+}
+
+/* Dark Mode - Cards and Sections */
+:root.dark-mode .stat-card {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #3a4451;
+}
+
+:root.dark-mode .stat-card:hover {
+  background: rgba(102, 126, 234, 0.15);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+:root.dark-mode .scan-item {
+  background: #242d3d;
+  border-color: #3a4451;
+}
+
+:root.dark-mode .scan-item:hover {
+  background: #2d3647;
+}
+
+/* Dark Mode - Badges and Status */
+:root.dark-mode .prediction-badge,
+:root.dark-mode .status-tag {
+  opacity: 0.9;
+}
+
+:root.dark-mode .api-status {
+  background: transparent;
+}
+
+:root.dark-mode .status-badge {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border-color: #3a4451;
+}
+
+/* Dark Mode - Bars and Indicators */
+:root.dark-mode .confidence-bar,
+:root.dark-mode .score-bar,
+:root.dark-mode .safety-bar {
+  background-color: #3a4451;
+}
+
+/* Dark Mode - Error and Messages */
+:root.dark-mode .error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #732a2a;
+  color: #fca5a5;
+}
+
+:root.dark-mode .api-error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
+  border-color: #732a2a;
+  color: #fca5a5;
+}
+
+/* Dark Mode - Footer */
+:root.dark-mode .app-footer {
+  background: linear-gradient(135deg, #1a1f2e 0%, #242d3d 100%);
+  border-top-color: #3a4451;
+  color: #b0b3b8;
+}
+
+/* Dark Mode - Upload Area */
+:root.dark-mode .upload-area {
+  background: rgba(102, 126, 234, 0.05);
+  border-color: #3a4451;
+}
+
+:root.dark-mode .upload-label {
+  color: #e4e6eb;
+}
+
+:root.dark-mode .upload-label:hover {
+  background-color: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+}
+
+/* Dark Mode - Preview */
+:root.dark-mode .preview-container {
+  background: #242d3d;
+}
+
+:root.dark-mode .preview-image {
+  border-color: #3a4451;
+}
+
+/* Smooth Transitions */
+body,
+.app-container,
+.app-header,
+.uploader-card,
+.result-card,
+input,
+select,
+textarea,
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

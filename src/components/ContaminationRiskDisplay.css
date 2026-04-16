@@ -1,0 +1,506 @@
+/* ContaminationRiskDisplay.css */
+.contamination-risk-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.risk-display-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.btn-refresh {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background: white;
+  color: #667eea;
+}
+
+.btn-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-retry {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-retry:hover {
+  background: #764ba2;
+}
+
+/* Loading and Error States */
+.loading-state,
+.empty-state,
+.error-state {
+  padding: 60px 20px;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.loading-state p,
+.empty-state p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.error-state {
+  color: #c0392b;
+}
+
+.error-state p {
+  margin: 0 0 15px 0;
+  font-size: 15px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #ecf0f1;
+  overflow-x: auto;
+  background: #f8f9fa;
+}
+
+.tab-btn {
+  padding: 15px 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7f8c8d;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #2c3e50;
+}
+
+.tab-btn.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.tab-content {
+  padding: 30px;
+  min-height: 300px;
+}
+
+/* Overview Section */
+.overview-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.overall-risk {
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #ecf0f1;
+}
+
+.overall-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.overall-value {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.overall-score {
+  font-size: 18px;
+  color: #34495e;
+}
+
+/* Risk Grid */
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.risk-card {
+  background: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.risk-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  transform: translateY(-4px);
+}
+
+.risk-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.risk-emoji {
+  font-size: 24px;
+}
+
+.risk-type {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.risk-score-container {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.risk-score-value {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.risk-score-label {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.risk-level-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.risk-progress {
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.risk-progress-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.risk-probability {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+.risk-cause {
+  font-size: 12px;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.risk-cause strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.risk-cause p {
+  margin: 0;
+  color: #34495e;
+  line-height: 1.4;
+}
+
+/* Detailed Risk Section */
+.detailed-risk-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.detailed-risk-section .risk-card {
+  margin-bottom: 0;
+}
+
+.risk-details {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.risk-details h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  font-size: 16px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Harvest Safety Card */
+.harvest-safety-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #27ae60;
+}
+
+.harvest-safety-card h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.safety-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.safety-message {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.safety-reason {
+  margin: 5px 0 0 0;
+  font-size: 13px;
+  color: #34495e;
+}
+
+/* Safety Score Section */
+.safety-score-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.safety-score-main {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+}
+
+.score-display {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.score-number {
+  font-size: 64px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.score-label {
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.score-status {
+  flex: 1;
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.score-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.score-component {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #ecf0f1;
+  text-align: center;
+}
+
+.component-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.component-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.score-explanation {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.score-explanation h4 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.score-explanation p {
+  margin: 0;
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .card-header h2 {
+    font-size: 20px;
+  }
+
+  .tabs {
+    font-size: 11px;
+  }
+
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overall-value {
+    font-size: 36px;
+  }
+
+  .score-display {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .safety-score-main {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .score-breakdown {
+    grid-template-columns: 1fr;
+  }
+}

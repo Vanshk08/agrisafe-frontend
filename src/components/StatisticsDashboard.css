@@ -1,0 +1,427 @@
+/* Statistics Dashboard Styles */
+
+.statistics-dashboard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-header h2 {
+  color: #1a1a1a;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.time-range-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.range-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  color: #666;
+}
+
+.range-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.range-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.empty-dashboard {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Metrics Section */
+.metrics-section {
+  margin-bottom: 2.5rem;
+}
+
+.metrics-section h3 {
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f5f7ff 100%);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid #e8eaff;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.metric-card.fresh {
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+  border-color: #d1fae5;
+}
+
+.metric-card.fresh:hover {
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+}
+
+.metric-card.spoiled {
+  background: linear-gradient(135deg, #fef2f2 0%, #fef9f9 100%);
+  border-color: #fee2e2;
+}
+
+.metric-card.spoiled:hover {
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+.metric-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.metric-card.fresh .metric-value {
+  color: #10b981;
+}
+
+.metric-card.spoiled .metric-value {
+  color: #ef4444;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.metric-percentage {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-top: 0.5rem;
+}
+
+.metric-card.fresh .metric-percentage {
+  color: #10b981;
+}
+
+.metric-card.spoiled .metric-percentage {
+  color: #ef4444;
+}
+
+/* Chart Sections */
+.chart-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.chart-section h3 {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Pie Chart */
+.pie-chart-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pie-center {
+  width: 140px;
+  height: 140px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pie-label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.pie-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.distribution-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.legend-color.fresh {
+  background: #10b981;
+}
+
+.legend-color.spoiled {
+  background: #ef4444;
+}
+
+.legend-text {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Trend Chart */
+.trend-chart {
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.chart-bars {
+  display: flex;
+  gap: 0.75rem;
+  min-width: min-content;
+  padding: 1rem 0;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50px;
+}
+
+.bar {
+  width: 40px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s;
+  cursor: pointer;
+  min-height: 10px;
+}
+
+.bar:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bar-label {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 50px;
+}
+
+.bar-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 0.25rem;
+}
+
+/* Confidence Bars */
+.confidence-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.confidence-bar-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 50px;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bar-label-text {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.bar-background {
+  height: 30px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 6px;
+}
+
+.bar-count {
+  text-align: right;
+  font-weight: 700;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Dark Mode Support */
+:root.dark-mode .statistics-dashboard {
+  background-color: #1a1f2e;
+}
+
+:root.dark-mode .metric-card {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #3a4451;
+}
+
+:root.dark-mode .chart-section {
+  background: #242d3d;
+  border-color: #3a4451;
+}
+
+:root.dark-mode .pie-center {
+  background: #1a1f2e;
+}
+
+:root.dark-mode .bar-background {
+  background-color: #3a4451;
+}
+
+:root.dark-mode .dashboard-header h2,
+:root.dark-mode .metrics-section h3,
+:root.dark-mode .chart-section h3 {
+  color: #e4e6eb;
+}
+
+:root.dark-mode .range-btn {
+  background: #242d3d;
+  border-color: #3a4451;
+  color: #b0b3b8;
+}
+
+:root.dark-mode .range-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .statistics-dashboard {
+    padding: 1.5rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .time-range-selector {
+    width: 100%;
+  }
+
+  .range-btn {
+    flex: 1;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pie-chart-container {
+    gap: 1rem;
+  }
+
+  .pie-chart {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pie-center {
+    width: 110px;
+    height: 110px;
+  }
+
+  .pie-label {
+    font-size: 1.4rem;
+  }
+
+  .distribution-legend {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .confidence-bar-item {
+    grid-template-columns: 80px 1fr 40px;
+    gap: 0.75rem;
+  }
+}
