@@ -33,6 +33,8 @@ const ContaminationRiskDisplay = ({ batchId }) => {
         // Fetch safety score
         const scoreResponse = await axios.post(
           `${API_BASE_URL}/api/food-safety-score/${batchId}`,
+          {}
+        );
       setSafetyScore(scoreResponse.data);
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Failed to fetch risk data';
