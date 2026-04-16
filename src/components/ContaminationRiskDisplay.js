@@ -25,17 +25,14 @@ const ContaminationRiskDisplay = ({ batchId }) => {
     try {
       // Fetch risks
       const riskResponse = await axios.get(
-        `${API_BASE_URL}/api/batch/${batchId}`
-      );
-      
-      setRisks(riskResponse.data.risks);
+          `${API_BASE_URL}/api/agricultural-risk/${batchId}`
+        );
 
-      // Fetch safety score
-      const scoreResponse = await axios.post(
-        `${API_BASE_URL}/api/batch/${batchId}`,
-        {}
-      );
-      
+        setRisks(riskResponse.data.risks);
+
+        // Fetch safety score
+        const scoreResponse = await axios.post(
+          `${API_BASE_URL}/api/food-safety-score/${batchId}`,
       setSafetyScore(scoreResponse.data);
     } catch (err) {
       const errorMessage = err.response?.data?.error || 'Failed to fetch risk data';
