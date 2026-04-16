@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './PreventionAdvisory.css';
 
@@ -15,13 +15,9 @@ const PreventionAdvisory = ({ batchId }) => {
   const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
   /**
-   * Fetch recommendations when batch ID changes
+   * Fetch safety score with recommendations
    */
-  useEffect(() => {
-    /**
-     * Fetch safety score with recommendations
-     */
-    const fetchRecommendations = async () => {
+  const fetchRecommendations = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -40,12 +36,16 @@ const PreventionAdvisory = ({ batchId }) => {
     } finally {
       setLoading(false);
     }
-    };
+  }, [API_BASE_URL, batchId]);
 
+  /**
+   * Fetch recommendations when batch ID changes
+   */
+  useEffect(() => {
     if (batchId) {
       fetchRecommendations();
     }
-  }, [batchId, API_BASE_URL]);
+  }, [batchId, fetchRecommendations]);
 
   /**
    * Get priority color

@@ -63,7 +63,7 @@ const AgriculturalForm = ({ onDataSubmitted }) => {
       const generatedId = `BATCH-${Date.now().toString(36).toUpperCase()}`;
       setFormData(prev => ({ ...prev, batch_id: generatedId }));
     }
-  }, []);
+  }, [formData.batch_id]);
 
   /**
    * Handle input change
