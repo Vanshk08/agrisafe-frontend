@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/health`);
+        const response = await fetch(`${API_BASE_URL}/health`);
         if (response.ok) {
           setApiStatus('connected');
         } else {
@@ -91,7 +91,7 @@ function App() {
           <div className="api-error">
             <h3>⚠️ API Connection Error</h3>
             <p>Cannot connect to backend API at {API_BASE_URL}</p>
-            <p>Make sure the Flask server is running on port 5000</p>
+            <p>Please check if the backend service is running.</p>
           </div>
         )}
 
